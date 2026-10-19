@@ -19,3 +19,4 @@ function displayMachine(){machine.replaceChildren();const nums=Array.from({lengt
 button.addEventListener('click',async()=>{button.disabled=true;results.replaceChildren();machine.classList.add('mixing');button.textContent='추첨 중...';try{for(let game=1;game<=5;game++){await sleep(500);const numbers=drawOneGame();const row=document.createElement('div');row.className='game';const label=document.createElement('label');label.textContent=`${game}게임`;const holder=document.createElement('div');holder.className='balls';row.append(label,holder);results.append(row);for(const n of numbers){holder.append(createBall(n));await sleep(115);}}}finally{machine.classList.remove('mixing');button.textContent='🎱 다시 추첨하기';button.disabled=false;}});
 displayMachine();
 </script></body></html>
+<!-- JunTTo Pages deployment update -->
